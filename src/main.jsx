@@ -1,6 +1,8 @@
-// main.jsx
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
+import './App.css';
+
 
 import App from './App';
 import AboutMe from './components/pages/AboutMe';
@@ -19,7 +21,6 @@ const router = createBrowserRouter([
       { path: 'contact', element: <ContactMe /> },
       { path: 'resume', element: <Resume /> },
     ],
-    errorElement: <NotFound />
   },
 ]);
 
