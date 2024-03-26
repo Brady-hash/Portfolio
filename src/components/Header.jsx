@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import CustomNavbar from "./Navbar";
 import { useState } from 'react';
 
 
@@ -13,7 +13,7 @@ function Header(){
     return (
         <header>
             <h1>Brady Davis</h1>
-            <Navbar activeButton={activeButton} handleNavClick={handleNavClick} />
+            <CustomNavbar activeButton={activeButton} handleNavClick={handleNavClick} />
         </header>
     );
 }

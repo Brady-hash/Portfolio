@@ -5,10 +5,10 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <div className= "d-flex flex-column min-vh-100">
       <Header />
-      <main>
-        <Outlet />
+      <main  className= "flex-grow-1">
+        <Outlet/>
       </main>
       <Footer />
     </div>

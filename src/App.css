@@ -1,0 +1,64 @@
+header {
+    background-color: #333; /* Background color of the navbar */
+  }
+  h1 {
+    color: #fff;
+    margin-left: .5em;
+    padding-top: .25em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .pages {
+    padding: 10px; /* Remove padding */
+    margin: 0 auto; /* Remove margin */
+  }
+  .row {
+    --bs-gutter-x: 0;
+  }
+
+  .portfolio .img-fluid {
+    width: 100%; /* makes the image width responsive within its column */
+    height: 225px; /* adjust the height as needed to fit your design */
+    object-fit: cover; /* ensures the image covers the set width/height without distorting */
+    margin-bottom: 15px; /* space between images and other elements below */
+}
+  
+  .footer-content {
+    background-color: #333;
+  }
+
+  .d-flex.flex-column.min-vh-100 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+
+  .nav-link {
+    color: #fff !important; /* Text color of the links */
+    padding: 8px 14px; /* Padding around the links */
+    font-weight: bold; /* Font weight of the links */
+  }
+  
+  .nav-link.active {
+    background-color: gray !important; /* Background color of the active link */
+    border-radius: 0.25rem; /* Border radius of the active link */
+  }
+  
+  @media (min-width: 576px) {
+    .nav-link {
+      padding: 8px 20px; /* Increase padding for screens wider than 576px */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .nav-link {
+      padding: 8px 26px; /* Increase padding for screens wider than 768px */
+    }
+  }

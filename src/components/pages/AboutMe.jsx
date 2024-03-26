@@ -1,22 +1,25 @@
 import React from  'react';
+import { Container , Row, Col } from "react-bootstrap";
 
 function AboutMe(){
     return (
-        <div className = "about-me">
+        <Container className = "about pages">
             <h2>About Me</h2>
-            <div className = "about-content">
-                <div className = "about-image">
+            <Row>
+                <Col className = "sm={12} md={10} lg={8}">
 
-                </div>
+                </Col>
 
-                <div className = "about-text">
+            <Row>
+                <Col className = "sm={12} md={8} lg={6}">
                     <p>
-                        iohsiovhsihiushuifhiuf aufbaiubfa fuabfiuabef aeufbaiuebfiuaf eaubfeiuabfiea fuabeiufbaiuefba efua eifu aiuef a efiua efiu 
+                        Hi, I'm Brady Davis, a Full Stack Developer based in Nashville, TN. I specialize in creating seamless, responsive, and efficient web applications. My technical expertise includes JavaScript, React, Node.js, and more.
                     </p>
 
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+            </Row>
+        </Container>
     );
 
 }

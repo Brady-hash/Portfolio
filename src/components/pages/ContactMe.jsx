@@ -1,6 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
+// Helper function for email validation
+const isValidEmail = (email) => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+};
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -44,53 +49,53 @@ function ContactMe() {
     }
   };
 
-  const isValidEmail = (email) => {
-    // Email validation regex (you can use a more complex regex for email validation)
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
-
   return (
-    <div className="contact-me">
+    <Container className="contact-me pages">
       <h2>Contact Me</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <div className="error-message">{formErrors.nameError}</div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <div className="error-message">{formErrors.emailError}</div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+      <Row>
+        <Col md={6}>
+          <Form onSubmit={handleFormSubmit}>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                isInvalid={!!formErrors.nameError}
+              />
+              <Form.Control.Feedback type="invalid">{formErrors.nameError}</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                isInvalid={!!formErrors.emailError}
+              />
+              <Form.Control.Feedback type="invalid">{formErrors.emailError}</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group controlId="message">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="mt-3">Send Message</Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
