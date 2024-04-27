@@ -1,13 +1,12 @@
 import React from "react";
-import CustomNavbar from "./Navbar";
+import CustomNavbar  from "./Navbar";
 import { useState } from 'react';
 
-
-function Header(){
+function Header() {
     const [activeButton, setActiveButton] = useState('AboutMe');
 
-    const handleNavClick = (buttonName) => {
-        setActiveButton(buttonName);
+    const handleNavClick = (name) => {
+        setActiveButton(name);
     };
 
     return (
