@@ -23,10 +23,9 @@ function ContactMe() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form fields
     let errors = {};
     if (formData.name.trim() === '') {
       errors.nameError = 'Name is required';
@@ -40,9 +39,19 @@ function ContactMe() {
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
     } else {
-      // Form submission logic (e.g., send data to server)
-      console.log('Form submitted:', formData);
-      // Reset form data and errors
+      try {
+        const response = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        const responseData = await response.json();
+        alert(responseData.message);
+      } catch (error) {
+        alert('Failed to send. Please try again later.');
+      }
       setFormData({ name: '', email: '', message: '' });
       setFormErrors({ nameError: '', emailError: '' });
     }

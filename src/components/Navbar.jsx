@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
 function CustomNavbar({ activeButton }) {
-  console.log(activeButton);
-
   return (
     <Nav className="justify-content-end custom-navbar">
       <Nav.Item>
