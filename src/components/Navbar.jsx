@@ -33,7 +33,7 @@ function CustomNavbar({ activeButton }) {
       }}>
         <Toolbar sx={{ justifyContent: 'space-between', marginRight: '5vw', marginLeft: '2vw' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <img src={Logo} alt="Logo" style={{ height: '70px' }} />
+            <img src={Logo} alt="Logo" style={{ height: '75px' }} />
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {['About Me', 'Work', 'Contact', 'Resume'].map((text) => (
@@ -62,7 +62,7 @@ function CustomNavbar({ activeButton }) {
       sx={{
        height: '50px',
        '@media (max-width:601px)': {
-        height: '90px'
+        height: '110px'
        }
       }} />
     </>
