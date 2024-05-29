@@ -7,7 +7,7 @@ import './App.css';
 
 import App from './App';
 import AboutMe from './components/pages/AboutMe';
-import Portfolio from './components/pages/Portfolio';
+import Work from './components/pages/Work';
 import ContactMe from './components/pages/ContactMe';
 import Resume from './components/pages/Resume';
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <AboutMe /> },
-      { path: 'portfolio', element: <Portfolio/> },
+      { path: 'work', element: <Work/> },
       { path: 'contact', element: <ContactMe /> },
       { path: 'resume', element: <Resume /> },
     ],

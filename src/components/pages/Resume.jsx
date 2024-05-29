@@ -1,27 +1,47 @@
 import React from 'react';
+import { Box, Grid, Button, Typography } from '@mui/material';
 import MyResumeImage from '../../assets/imgs/Resume.jpg';
 import MyResumePDF from '../../assets/imgs/Resume.pdf';
-import { Button, Container, Row, Col, Image } from 'react-bootstrap';
 
 function Resume() {
   return (
-    <Container className="resume pages">
-      <h2>Resume</h2>
-      <Row className="justify-content-center">
-        <Col sm={12} md={10} lg={8}>
-          <Image src={MyResumeImage} alt="Resume" fluid />
-        </Col>
-        <Col sm={12} md={8} lg={6} className="text-start mt-3">
+    <Box
+    sx={{
+      m:'0',
+      minHeight:'100vh',
+      width:'100vw',
+      justifyContent: 'center',
+      alignItems:'center',
+      pt: '100px', 
+      display: 'flex',
+      flexDirection: 'column',
+
+      }}>
+      <Typography variant="h2" component="h2" gutterBottom sx={{color:"white"}}>
+        Resume
+      </Typography>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12} md={10} lg={8}>
+          <Box
+            component="img"
+            src={MyResumeImage}
+            alt="Resume"
+            sx={{ width: '100%', height: 'auto' }}
+          />
+        </Grid>
+        <Grid item xs={12} md={8} lg={6} sx={{ display: 'flex',justifyContent:'center'}}>
           <Button
             href={MyResumePDF}
             download="Resume.pdf"
-            variant="primary"
+            variant="contained"
+            color="primary"
+            sx={{ mt: 3, mb: 2,}}
           >
             Download Resume (PDF)
           </Button>
-        </Col>
-      </Row>
-    </Container>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 

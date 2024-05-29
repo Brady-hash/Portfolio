@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import CustomNavbar from "./Navbar";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import CustomNavbar from './Navbar';
+import { useLocation } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 function Header() {
     const location = useLocation();
@@ -15,19 +16,17 @@ function Header() {
             return 'AboutMe';
         };
 
-        // Set the active button based on the current path
         setActiveButton(determineActiveButton(location.pathname));
-    }, [location]); // Re-run this effect when the location changes
+    }, [location]);
 
     const handleNavClick = (name) => {
         setActiveButton(name);
     };
 
     return (
-        <header>
-            <h1>Brady Davis</h1>
+        <Box component="header" sx={{ width: '100%', overflowX: 'hidden', boxSizing: 'border-box'}}> 
             <CustomNavbar activeButton={activeButton} handleNavClick={handleNavClick} />
-        </header>
+        </Box>
     );
 }
 

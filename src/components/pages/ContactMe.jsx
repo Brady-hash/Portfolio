@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Grid, TextField, Button, Typography, Box } from '@mui/material';
 
 const isValidEmail = (email) => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -58,51 +58,56 @@ function ContactMe() {
   };
 
   return (
-    <Container className="contact-me pages">
-      <h2>Contact Me</h2>
-      <Row>
-        <Col md={6}>
-          <Form onSubmit={handleFormSubmit}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                isInvalid={!!formErrors.nameError}
-              />
-              <Form.Control.Feedback type="invalid">{formErrors.nameError}</Form.Control.Feedback>
-            </Form.Group>
-
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                isInvalid={!!formErrors.emailError}
-              />
-              <Form.Control.Feedback type="invalid">{formErrors.emailError}</Form.Control.Feedback>
-            </Form.Group>
-
-            <Form.Group controlId="message">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={5}
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit" className="mt-3">Send Message</Button>
-          </Form>
-        </Col>
-      </Row>
+    <Container maxWidth="sm" sx={{pt: '100px'}}>
+      <Typography variant="h2" gutterBottom>Contact Me</Typography>
+      <form onSubmit={handleFormSubmit}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              error={!!formErrors.nameError}
+              helperText={formErrors.nameError}
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Email"
+              variant="outlined"
+              fullWidth
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              error={!!formErrors.emailError}
+              helperText={formErrors.emailError}
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Message"
+              variant="outlined"
+              fullWidth
+              multiline
+              rows={4}
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="contained" color="primary" type="submit">
+              Send Message
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
     </Container>
   );
 }
