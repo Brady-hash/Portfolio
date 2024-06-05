@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, useMediaQuery, useTheme, IconButton,  } from '@mui/material';
 import Logo from "../assets/imgs/Logo.png";
+import SideBar from "./SideBar";
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 function CustomNavbar({ activeButton }) {
   const [scrolled, setScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const smScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +27,13 @@ function CustomNavbar({ activeButton }) {
     };
   }, []);
 
+  const toggleDrawer = (open) => (event) => {
+    if(event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  }
+
   return (
     <>
       <AppBar position="fixed" sx={{
@@ -35,6 +48,13 @@ function CustomNavbar({ activeButton }) {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <img src={Logo} alt="Logo" style={{ height: '75px' }} />
           </Box>
+          {smScreen ? (
+            <IconButton edge="end" aria-label="menu" onClick={toggleDrawer(true)}
+              sx={{ pr:1, pt:2, height: '50px', width: '50px'}}
+            >
+              <MenuIcon sx={{height: 'auto', width: "40px"}} />
+            </IconButton>
+          ) : (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {['About Me', 'Work', 'Contact', 'Resume'].map((text) => (
               <Button
@@ -56,8 +76,10 @@ function CustomNavbar({ activeButton }) {
               </Button>
             ))}
           </Box>
+          )}
         </Toolbar>
       </AppBar>
+      <SideBar sideBarToggle={drawerOpen} onClose={toggleDrawer(false)} activeButton={activeButton}/>
       <Box 
       sx={{
        height: '50px',
