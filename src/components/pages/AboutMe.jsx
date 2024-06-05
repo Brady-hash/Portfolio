@@ -30,7 +30,7 @@ function AboutMe() {
                         About Me
                     </Typography>
                     <Box sx={{pb: 2,ml: { xs: 2, sm: 3, md: 10, lg: 6, xl: 8 }, mr: { xs: 2, sm: 3, md: 4, lg: 6, xl: 8 }}}>
-                        <Typography variant="body2" component="body2" sx={{ 
+                        <Typography variant="body2" component="p" sx={{ 
                         color:"#212529", 
                     }}>
                         As an aspiring full-stack developer, I am dedicated to contributing to team success while continuously honing my technical skills. With a strong background in restaurant supervision, I bring exceptional communication abilities, a commitment to customer satisfaction, meticulous attention to detail, and proficient time management to the table. These skills have not only been instrumental in managing fast-paced environments but also resonate with the dynamic demands of software development. I am eager to leverage my work ethic and the versatility developed from my previous career to excel in a professional programming role, aiming to deliver innovative solutions and drive technological advancement.

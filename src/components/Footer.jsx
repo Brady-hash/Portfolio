@@ -1,20 +1,22 @@
 import React from "react";
-import { Row, Col } from 'react-bootstrap';
+import { Box, Grid } from '@mui/material';
 import githubLogo from '../assets/svgs/github.svg';
 import linkedinLogo from '../assets/svgs/linkedin.svg';
 
 function Footer() {
   return (
-    <Row className="footer-content">
-      <Col className="footer-logos text-center">
-        <a href="https://github.com/Brady-hash" target="_blank" rel="noopener noreferrer">
-          <img src={githubLogo} alt="GitHub" />
-        </a>
-        <a href="https://www.linkedin.com/in/brady-davis-j/" target="_blank" rel="noopener noreferrer">
-          <img src={linkedinLogo} alt="LinkedIn" />
-        </a>
-      </Col>
-    </Row>
+    <Box sx={{ backgroundColor: '#2e79ba', p: 2 }}>
+      <Grid container justifyContent="center" alignItems="center">
+        <Grid item>
+          <a href="https://github.com/Brady-hash" target="_blank" rel="noopener noreferrer">
+            <Box component="img" src={githubLogo} alt="GitHub" sx={{ mx: 1, height: 40 }} />
+          </a>
+          <a href="https://www.linkedin.com/in/brady-davis-j/" target="_blank" rel="noopener noreferrer">
+            <Box component="img" src={linkedinLogo} alt="LinkedIn" sx={{ mx: 1, height: 40 }} />
+          </a>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
