@@ -17,7 +17,7 @@ export const SideBar = ({ sideBarToggle, onClose, activeButton }) => {
                     width: '40%', 
                     boxSizing: 'border-box', 
                     border: 'solid #444 2px', 
-                    bgcolor: '#333',
+                    bgcolor: '#2e79ba',
                 },
             }}
         >
@@ -30,10 +30,12 @@ export const SideBar = ({ sideBarToggle, onClose, activeButton }) => {
                         maxWidth: 250,
                         maxHeight: 250,
                         margin: '0 auto',  
-                        display: 'block',  
+                        display: 'block',
+                        mt: 3, 
+                        p:0
                     }}
                 />
-                <List>
+                <List sx={{mt:2}}>
                 {['About Me', 'Work', 'Contact', 'Resume'].map((text) => (
                         <ListItem
                             button
@@ -41,8 +43,21 @@ export const SideBar = ({ sideBarToggle, onClose, activeButton }) => {
                             component={NavLink}
                             to={text === 'About Me' ? '/' : `/${text.replace(' ', '').toLowerCase()}`}
                             className={activeButton === text.replace(' ', '') ? 'active' : ''}
+                            sx={{
+                                    backgroundColor: '#212529',
+                                    '&:hover': {
+                                        backgroundColor: 'rgba(33, 37, 41, 0.7)',
+                                    },
+                                    borderRadius:1 ,
+                                    border: '1px solid black',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    p: 1.25
+                                }}
+
                         >
-                            <ListItemText primary={text} sx={{ color: '#fff' }} />
+                            <ListItemText primary={text} sx={{ color: '#fff', textAlign: 'center'}} />
                         </ListItem>
                     ))}
                 </List>
