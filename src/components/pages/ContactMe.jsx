@@ -59,7 +59,7 @@ function ContactMe() {
 
   return (
     <Container maxWidth="sm" sx={{pt: '100px'}}>
-      <Typography variant="h2" gutterBottom>Contact Me</Typography>
+      <Typography variant="h2" gutterBottom sx={{color:"#212529", alignSelf: 'flex-start' }}>Contact Me</Typography>
       <form onSubmit={handleFormSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12}>

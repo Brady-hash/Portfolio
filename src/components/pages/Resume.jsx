@@ -17,7 +17,7 @@ function Resume() {
       flexDirection: 'column',
 
       }}>
-      <Typography variant="h2" component="h2" gutterBottom sx={{color:"white"}}>
+      <Typography variant="h2" component="h2" gutterBottom sx={{color:"#212529", alignSelf: 'flex-start', ml: 3 }}>
         Resume
       </Typography>
       <Grid container spacing={2} justifyContent="center">
