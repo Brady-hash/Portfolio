@@ -151,9 +151,9 @@ function AboutMe() {
 
         ) : (
 
-          <Grid container spacing={2} sx={{ height:"500px", mb: 2 }}>
+          <Grid container spacing={2} sx={{  mb: 2 }}>
           {/* About Me Section */}
-          <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} sm={6} md={4} sx={{height:"500px", display: 'flex', flexDirection: 'column' }}>
           <Box 
           sx={{ 
             bgcolor: '#2e79ba',
