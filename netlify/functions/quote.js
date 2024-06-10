@@ -1,28 +1,21 @@
-import fetch from 'node-fetch';
-
 export async function handler(event, context) {
-    console.log('Function execution started');
+    console.log("Fetching quote from API");
     try {
-        console.log('Fetching quote from API');
         const res = await fetch('https://api.quotable.io/random');
-        
         if (!res.ok) {
-            throw new Error(`Network response was not ok: ${res.statusText}`);
+            throw new Error(`HTTP error! status: ${res.status}`);
         }
-
-        console.log('Parsing response as JSON');
         const data = await res.json();
-        
-        console.log('Returning success response');
+        console.log("Returning success response");
         return {
             statusCode: 200,
             body: JSON.stringify(data),
         };
     } catch (error) {
-        console.error('Error fetching the quote:', error);
+        console.error("Error fetching the quote:", error.message);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: `Failed to fetch quote: ${error.message}` }),
+            body: JSON.stringify({ error: 'Failed to fetch quote', details: error.message }),
         };
     }
-};
+}

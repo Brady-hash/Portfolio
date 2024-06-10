@@ -1,5 +1,6 @@
 [build]
   functions = "netlify/functions"
+   environment = { NODE_VERSION = "18.x" }
 
 [dev]
   framework = "vite"
