@@ -1,9 +1,9 @@
-const sgMail = require('@sendgrid/mail');
+import sgMail from '@sendgrid/mail';
 
 // Set the API key for SendGrid
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-exports.handler = async function(event, context) {
+export async function handler(event, context) {
     // Ensure the HTTP method is POST
     if (event.httpMethod !== "POST") {
         // If not, return a 405 Method Not Allowed error
