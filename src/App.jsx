@@ -11,7 +11,7 @@ function App() {
       flexDirection: 'column',
       minHeight: '100vh',
       minWidth: '100vw',
-      backgroundColor: '#2e79ba'
+      backgroundColor: '#2AA0FF'
     }}>
       <Header />
       <Box component="main" sx={{flexGrow: 1, backgroundColor: '#fff'}}>

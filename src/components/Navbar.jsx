@@ -40,7 +40,7 @@ function CustomNavbar({ activeButton }) {
         top: 0,
         width: '100%',
         transition: 'all 0.3s ease-in-out',
-        backgroundColor: scrolled ? '#ffffff' : '#2e79ba',
+        backgroundColor: scrolled ? '#ffffff' : '#2AA0FF',
         boxShadow: scrolled ? 1 : 0,
         color: scrolled ? '#212529' : '#FFFFFF',
       }}>

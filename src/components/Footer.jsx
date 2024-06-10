@@ -5,7 +5,7 @@ import linkedinLogo from '../assets/svgs/linkedin.svg';
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: '#2e79ba', p: 2 }}>
+    <Box sx={{ backgroundColor: '#2AA0FF', p: 2 }}>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item>
           <a href="https://github.com/Brady-hash" target="_blank" rel="noopener noreferrer">
