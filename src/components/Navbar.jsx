@@ -56,7 +56,7 @@ function CustomNavbar({ activeButton }) {
             </IconButton>
           ) : (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {['About Me', 'Work', 'Contact', 'Resume'].map((text) => (
+            {['About Me', 'Portfolio', 'Contact', 'Resume'].map((text) => (
               <Button
                 key={text}
                 component={NavLink}

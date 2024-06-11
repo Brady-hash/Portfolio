@@ -6,7 +6,7 @@ import './App.css';
 
 import App from './App';
 import AboutMe from './components/pages/AboutMe';
-import Work from './components/pages/Work';
+import Porfolio from './components/pages/Portfolio';
 import ContactMe from './components/pages/ContactMe';
 import Resume from './components/pages/Resume';
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <AboutMe /> },
-      { path: 'work', element: <Work/> },
+      { path: 'portfolio', element: <Porfolio/> },
       { path: 'contact', element: <ContactMe /> },
       { path: 'resume', element: <Resume /> },
     ],

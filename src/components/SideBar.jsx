@@ -36,7 +36,7 @@ export const SideBar = ({ sideBarToggle, onClose, activeButton }) => {
                     }}
                 />
                 <List sx={{mt:2}}>
-                {['About Me', 'Work', 'Contact', 'Resume'].map((text) => (
+                {['About Me', 'Portfolio', 'Contact', 'Resume'].map((text) => (
                         <ListItem
                             button
                             key={text}

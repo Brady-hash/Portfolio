@@ -10,7 +10,7 @@ function Header() {
     useEffect(() => {
         const determineActiveButton = (path) => {
             if (path === "/") return 'AboutMe';
-            if (path.includes("/work")) return 'Work';
+            if (path.includes("/portfolio")) return 'Portfolio';
             if (path.includes("/contact")) return 'Contact';
             if (path.includes("/resume")) return 'Resume';
             return 'AboutMe';
